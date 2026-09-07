@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>소은이의 영어단어 시험 화이팅♥</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">W</div>
+      <div>
+        <h1>소은이의 영어단어 시험 화이팅♥</h1>
+        <p>주간 영어단어 목록 · 시험 · 기록</p>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="주요 메뉴">
+      <button class="tab active" data-view="study">단어 목록</button>
+      <button class="tab" data-view="exam">시험</button>
+      <button class="tab" data-view="history">기록</button>
+      <button class="tab" data-view="manage">관리</button>
+      <span id="exam-lock-badge" class="exam-lock-badge" hidden>시험 진행 중 · 단어 목록 잠금</span>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="study-view" class="view active"></section>
+    <section id="exam-view" class="view"></section>
+    <section id="history-view" class="view"></section>
+    <section id="manage-view" class="view"></section>
+  </main>
+
+  <dialog id="confirm-dialog" class="dialog">
+    <form method="dialog">
+      <h3 id="dialog-title">확인</h3>
+      <p id="dialog-message"></p>
+      <div class="dialog-actions">
+        <button value="cancel" class="btn secondary">취소</button>
+        <button value="confirm" class="btn danger" id="dialog-confirm">확인</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="./words.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
