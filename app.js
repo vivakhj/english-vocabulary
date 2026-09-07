@@ -607,6 +607,16 @@
   }
 
   $$('.tab').forEach(tab => tab.addEventListener('click', () => setView(tab.dataset.view)));
+
+  // PWA: GitHub Pages 같은 HTTPS 환경에서는 앱 파일을 캐시하여 홈 화면 설치/오프라인 실행을 지원합니다.
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js').catch(() => {
+        // 로컬/특수 환경에서 등록이 실패하더라도 기존 웹앱 기능은 그대로 사용합니다.
+      });
+    });
+  }
+
   renderAll();
   setView(currentView);
 })();
